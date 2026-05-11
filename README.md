@@ -1,56 +1,186 @@
-# 🔁 ClaudeRelay (v1.0.0)
+<div align="center">
 
-Seamless Claude account handoff. When you hit the free usage limit, ClaudeRelay saves your conversation so you can continue it instantly on another account — one click, no lost context.
+<img src="https://img.shields.io/badge/version-1.0.0-f5a623?style=for-the-badge&logo=github" alt="Version 1.0.0"/>
+<img src="https://img.shields.io/badge/license-Proprietary-e85d04?style=for-the-badge" alt="Proprietary"/>
+<img src="https://img.shields.io/badge/browsers-Chrome%20%7C%20Edge%20%7C%20Brave-4285F4?style=for-the-badge&logo=googlechrome" alt="Browsers"/>
+<img src="https://img.shields.io/badge/cost-100%25%20Free-39d98a?style=for-the-badge" alt="Free"/>
 
-## ✨ Features
+<br/><br/>
 
-- ✅ Auto-saves when Claude usage limit is detected
-- ✅ One-click save from extension popup 
-- ✅ Cross-browser sync via Cloudflare KV (free)
-- ✅ Works on Chrome, Edge, and Brave (any browser)
-- ✅ 100% free for users — open source
+# 🔁 ClaudeRelay
 
-### Developer / Manual Installation
-1. Clone or download the project files.
-2. Open your browser and navigate to `chrome://extensions/` (or `edge://extensions/` / `brave://extensions/`).
-3. Enable **Developer mode** in the top right corner.
-4. Click **Load unpacked** and select the `extension` folder located inside the project directory.
+**Hit the Claude usage limit? Don't lose your conversation.**
 
-## 🚀 How It Works
+ClaudeRelay saves your chat with one click and lets you pick up exactly where you left off — on any account, any browser.
 
-1. Use Claude normally.
-2. When you hit the limit, ClaudeRelay auto-saves your chat (or click 💾 in the extension popup anytime).
-3. Switch to another Claude account in any browser (same browser or new browser).
-4. "▶ Continue chat" appears in the sidebar — click it.
-5. Claude continues from exactly where you left off.
-6. Same process can be repeated any number of times to continue conversation on different accounts.
+[⭐ Star to Unlock](#) · [🐛 Report a Bug](../../issues) · [💡 Request a Feature](../../issues)
 
-## ⭐ 5 Important Highlights
+</div>
 
-1. **Smart Context Packing:** It intelligently packs your conversation by sending the last 15+ messages to ensure Claude retains the most relevant recent context while saving space.
-2. **Cross-Browser Sync (Cloudflare Worker):** Includes support for syncing over a Cloudflare worker backend (`https://clauderelay.ksudhanshugollu2001.workers.dev`), letting you safely pass a short Relay Code to another device or browser.
-3. **Robust Local Fallback:** Even if cloud sync fails or is unavailable, the extension saves the conversation snapshot locally (using `chrome.storage.local`), allowing you to switch accounts on the same browser effortlessly.
-4. **Native-Feeling UI Integration:** The UI changes, including toast notifications and sidebar injections (`injector.js`), are designed to look and feel completely native to the original Claude.ai interface.
-5. **Privacy First & Ephemeral Storage:** Your data is only saved when explicitly triggered (either manually or by hitting a limit) and your cloud sync Relay Codes expire securely after 4 hours.
+---
 
-## 📁 Core Architecture
+## 😤 The Problem
 
-- `manifest.json`: The core Chrome extension manifest utilizing modern Manifest V3 standards.
-- `background.js`: Service worker managing local storage operations and Cloudflare network synchronization.
-- `content.js`: Observes the DOM to scrape conversation history and detect usage limit banners automatically.
-- `injector.js`: Responsible for safely injecting the "Continue chat" sidebar UI elements and auto-filling the resumed prompt.
-- `popup/`: The minimalist dark-themed HTML/CSS/JS frontend for the extension's toolbar popup.
+You're in the middle of a deep conversation with Claude. Then — **boom.**
 
+> *"You've reached your usage limit. Try again after [painful wait time]."*
 
-## 📄 License & Versioning
+You lose your flow. Your context is gone. Starting over means re-explaining everything from scratch.
 
-**Proprietary License**
-All rights reserved. This project and its contents are proprietary. No part of this software may be copied, distributed, or modified without explicit permission from the author. 
+## ✨ The Solution
 
-If you wish to become a contributor, suggest edits, or request updates, please send a direct request.
+ClaudeRelay auto-saves your conversation the moment it detects the limit. Switch to another Claude account and **continue in seconds** — not from scratch, but from exactly where you left off.
 
-## 📦 Releases
+---
 
-- **v1.0.0 (Latest):** Initial release of ClaudeRelay featuring cross-browser sync, local fallback, and smart context packing.
+## 🚀 Features
 
-> **Note:** We are currently working on an exciting new feature that will be included in the next version. Keep using the extension and stay tuned for updates!
+| Feature | Description |
+|---|---|
+| 🤖 **Auto-detection** | Spots the usage limit banner automatically and saves your chat instantly |
+| 💾 **One-click save** | Hit the save button in the popup anytime — don't wait for the limit |
+| ☁️ **Cross-browser sync** | Uses Cloudflare KV to pass a short Relay Code to any device or browser |
+| 📦 **Local fallback** | Even without internet, saves locally so same-browser switching always works |
+| 🎨 **Native UI** | Toast notifications and sidebar inject cleanly into Claude's own design |
+| 🔒 **Privacy first** | Nothing is saved until you trigger it. Cloud codes expire in 4 hours |
+| 🆓 **100% free** | No subscriptions, no paywalls, no tracking |
+
+---
+
+## ⚡ How It Works
+
+```
+1. Use Claude normally
+        ↓
+2. Hit the limit (or click 💾 anytime to save early)
+        ↓
+3. Get a short Relay Code
+        ↓
+4. Open Claude on another account — same or different browser
+        ↓
+5. Click "▶ Continue chat" in the sidebar
+        ↓
+6. Claude picks up right where you left off ✅
+```
+
+Repeat as many times as you need across as many accounts as you have.
+
+---
+
+## 📥 Installation
+
+### Option A — Browser Web Stores *(coming soon)*
+
+> Chrome Web Store · Edge Add-ons · Firefox Add-ons
+
+### Option B — Manual Install (Developer Mode)
+
+> Works on **Chrome**, **Edge**, and **Brave**
+
+1. Clone or download this repo
+2. Open your browser and go to `chrome://extensions/` (or `edge://extensions/` / `brave://extensions/`)
+3. Toggle **Developer mode** on (top-right corner)
+4. Click **Load unpacked** → select the `extension/` folder inside this project
+5. The 🔁 icon appears in your toolbar — you're ready!
+
+> **First launch:** You'll be asked to ⭐ star this repo to unlock the extension. It takes 2 seconds and keeps this project alive!
+
+---
+
+## 🧠 Under the Hood
+
+ClaudeRelay is built with **smart context packing** — it doesn't dump your entire chat history, it intelligently selects the last 15+ most relevant messages to keep Claude's context tight and coherent when resuming.
+
+### Core files
+
+```
+extension/
+├── manifest.json     → Manifest V3 extension config
+├── background.js     → Service worker: storage + Cloudflare sync
+├── content.js        → DOM observer: scrapes chat + detects limit banners
+├── injector.js       → Injects "Continue chat" sidebar UI + auto-fills prompt
+├── gate/
+│   ├── gate.html     → Star gate unlock page (first install)
+│   └── gate.js       → GitHub star verification
+└── popup/
+    ├── popup.html    → Toolbar popup UI
+    └── popup.js      → Popup logic: save, relay code, status
+```
+
+### Cloud sync (optional)
+
+Cross-browser relay runs through a **Cloudflare Worker + KV** backend — free tier, zero cost to you or us. Your conversation snapshot is stored ephemerally under a short code and **auto-deleted after 4 hours**. No accounts, no databases, no data retention.
+
+---
+
+## 🔧 Deploy Your Own Backend
+
+Want full control? You can self-host the Cloudflare Worker:
+
+1. Sign up at [cloudflare.com](https://cloudflare.com) (free tier is more than enough)
+2. Create a **KV namespace** called `RELAY_STORE`
+3. Deploy the worker from `/worker/` in this repo
+4. Update `WORKER_URL` in `background.js` to point to your worker
+
+Full setup guide → [`/docs/deploy.md`](./docs/deploy.md) *(coming soon)*
+
+---
+
+## 🛡️ Privacy & Security
+
+We built ClaudeRelay with privacy as a first principle, not an afterthought:
+
+- ✅ **No account required** — ever
+- ✅ **No analytics, no tracking, no telemetry**
+- ✅ **Data is only saved when you trigger it** (manually or at limit)
+- ✅ **Cloud sync codes expire automatically** after 4 hours
+- ✅ **Local fallback never leaves your device**
+- ✅ **Open source** — you can read every line of code
+
+The extension only requests permissions it actually needs. See [`manifest.json`](./extension/manifest.json) for the full list.
+
+---
+
+## 🤝 Contributing
+
+ClaudeRelay is source-available but proprietary. Direct code contributions aren't open at the moment, but you can absolutely help by:
+
+- ⭐ **Starring the repo** (it's literally step one!)
+- 🐛 [Reporting bugs](../../issues/new?template=bug_report.md)
+- 💡 [Suggesting features](../../issues/new?template=feature_request.md)
+- 📣 Sharing with others who hit Claude's limit
+
+Want to contribute code? Send a message and we'll talk.
+
+---
+
+## 📦 Changelog
+
+### v1.0.0 — *Initial Release*
+- ✅ Auto-detection of Claude usage limit banner
+- ✅ One-click conversation save from popup
+- ✅ Cloudflare KV cross-browser relay
+- ✅ Local storage fallback
+- ✅ Native sidebar "Continue chat" injector
+- ✅ Toast notification system
+- ✅ Star gate unlock system
+
+> 🔜 **Something new is cooking for v1.1.0.** Star the repo to stay updated.
+
+---
+
+## 📄 License
+
+**Proprietary — All Rights Reserved**
+
+This project is free to use but not free to copy, redistribute, or modify without explicit permission. See [`LICENSE`](./LICENSE) for full terms.
+
+---
+
+<div align="center">
+
+Made with ☕ and frustration at usage limits.
+
+**If ClaudeRelay saved your conversation today, give it a ⭐**
+
+</div>
