@@ -55,3 +55,7 @@ If you wish to become a contributor, suggest edits, or request updates, please s
 - **v1.0.0 (Latest):** Initial release of ClaudeRelay featuring cross-browser sync, local fallback, and smart context packing.
 
 > **Note:** We are currently working on an exciting new feature that will be included in the next version. Keep using the extension and stay tuned for updates!
+
+<div align="center">
+If ClaudeRelay saved your conversation today, give it a ⭐
+</div>
