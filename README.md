@@ -2,19 +2,14 @@
 
 Seamless Claude account handoff. When you hit the free usage limit, ClaudeRelay saves your conversation so you can continue it instantly on another account — one click, no lost context.
 
-> **Note:** We are currently working on an exciting new feature that will be included in the next version. Keep using the extension and stay tuned for updates!
-
 ## ✨ Features
 
-- ✅ Auto-saves when a Claude usage limit is detected.
-- ✅ One-click save from the extension popup (no DevTools needed).
-- ✅ Cross-browser sync via Cloudflare KV (free).
-- ✅ Works on Chrome, Edge, and Brave (any Chromium-based browser).
-- ✅ 100% free for users — open source.
+- ✅ Auto-saves when Claude usage limit is detected
+- ✅ One-click save from extension popup (no DevTools needed)
+- ✅ Cross-browser sync via Cloudflare KV (free)
+- ✅ Works on Chrome, Edge, and Brave (any browser)
+- ✅ 100% free for users — open source
 
-## 📥 Install
-
-[Chrome Web Store link] | [Edge Add-ons link] | [Firefox Add-ons link]
 
 ### Developer / Manual Installation
 1. Clone or download the project files.
@@ -26,14 +21,14 @@ Seamless Claude account handoff. When you hit the free usage limit, ClaudeRelay 
 
 1. Use Claude normally.
 2. When you hit the limit, ClaudeRelay auto-saves your chat (or click 💾 in the extension popup anytime).
-3. Switch to another Claude account (in the same or a new browser).
+3. Switch to another Claude account in any browser (same browser or new browser).
 4. "▶ Continue chat" appears in the sidebar — click it.
 5. Claude continues from exactly where you left off.
-6. This process can be repeated any number of times to continue the conversation across different accounts.
+6. Same process can be repeated any number of times to continue conversation on different accounts.
 
 ## ⭐ 5 Important Highlights
 
-1. **Smart Context Packing:** It intelligently packs your conversation by sending the last 20 messages to ensure Claude retains the most relevant recent context while saving space.
+1. **Smart Context Packing:** It intelligently packs your conversation by sending the last 15+ messages to ensure Claude retains the most relevant recent context while saving space.
 2. **Cross-Browser Sync (Cloudflare Worker):** Includes support for syncing over a Cloudflare worker backend (`https://clauderelay.ksudhanshugollu2001.workers.dev`), letting you safely pass a short Relay Code to another device or browser.
 3. **Robust Local Fallback:** Even if cloud sync fails or is unavailable, the extension saves the conversation snapshot locally (using `chrome.storage.local`), allowing you to switch accounts on the same browser effortlessly.
 4. **Native-Feeling UI Integration:** The UI changes, including toast notifications and sidebar injections (`injector.js`), are designed to look and feel completely native to the original Claude.ai interface.
@@ -47,9 +42,8 @@ Seamless Claude account handoff. When you hit the free usage limit, ClaudeRelay 
 - `injector.js`: Responsible for safely injecting the "Continue chat" sidebar UI elements and auto-filling the resumed prompt.
 - `popup/`: The minimalist dark-themed HTML/CSS/JS frontend for the extension's toolbar popup.
 
-## 📄 License & Versioning
 
-**Version:** 1.0.0 (1st Version of ClaudeRelay)
+## 📄 License & Versioning
 
 **Proprietary License**
 All rights reserved. This project and its contents are proprietary. No part of this software may be copied, distributed, or modified without explicit permission from the author. 
@@ -59,3 +53,5 @@ If you wish to become a contributor, suggest edits, or request updates, please s
 ## 📦 Releases
 
 - **v1.0.0 (Latest):** Initial release of ClaudeRelay featuring cross-browser sync, local fallback, and smart context packing.
+
+> **Note:** We are currently working on an exciting new feature that will be included in the next version. Keep using the extension and stay tuned for updates!
