@@ -1,0 +1,30 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node.js / Cloudflare Worker (in case you add the worker code here later)
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+.dev.vars
+dist/
+build/
+.wrangler/
+
+# Chrome Extension Specific
+*.zip
+*.crx
+*.pem
