@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: system-ui;
+            width: 290px;
+            padding: 16px;
+            background: #0b0b0d;
+            color: #e8e8f0
+        }
+
+        .logo {
+            font-size: 15px;
+            font-weight: 700;
+            color: #a394ff;
+            margin-bottom: 12px
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 12px;
+            background: #7c6ef7;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .15s;
+        }
+
+        .save-btn:hover {
+            background: #a394ff
+        }
+
+        .save-btn:disabled {
+            opacity: .6;
+            cursor: not-allowed
+        }
+
+        .card {
+            background: #131316;
+            border: 1px solid #28282f;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 10px
+        }
+
+        .lbl {
+            font-size: 10px;
+            color: #5a5a6e;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            margin-bottom: 8px;
+            font-weight: 600
+        }
+
+        .code {
+            font-size: 28px;
+            font-weight: 700;
+            color: #a394ff;
+            letter-spacing: 4px;
+            font-family: monospace;
+            text-align: center
+        }
+
+        .hint {
+            font-size: 11px;
+            color: #4a4a58;
+            text-align: center;
+            margin-top: 5px
+        }
+
+        .info {
+            color: #3dd68c;
+            font-size: 13px;
+            margin-bottom: 4px
+        }
+
+        .prev {
+            font-size: 12px;
+            color: #4a4a58;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+
+        input {
+            width: 100%;
+            padding: 8px 10px;
+            background: #0b0b0d;
+            border: 1px solid #28282f;
+            border-radius: 7px;
+            color: #e8e8f0;
+            font-size: 13px;
+            font-family: monospace;
+            letter-spacing: 2px;
+            margin-bottom: 7px
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #7c6ef7
+        }
+
+        input::placeholder {
+            font-family: system-ui;
+            letter-spacing: 0;
+            color: #333340
+        }
+
+        button.load {
+            width: 100%;
+            padding: 9px;
+            border-radius: 7px;
+            border: none;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #7c6ef7;
+            color: #fff;
+            margin-bottom: 6px
+        }
+
+        button.load:hover {
+            background: #a394ff
+        }
+
+        button.clear {
+            width: 100%;
+            padding: 9px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #1a1a1f;
+            color: #f05a5a;
+            border: 1px solid #28282f
+        }
+
+        .empty {
+            text-align: center;
+            color: #3a3a48;
+            font-size: 13px;
+            line-height: 1.7;
+            padding: 10px 0
+        }
+
+        .tip {
+            font-size: 11px;
+            color: #3a3a48;
+            text-align: center;
+            margin-top: 10px;
+            line-height: 1.6
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">🔁 ClaudeRelay</div>
+    <button class="save-btn" id="save-now">💾 Save Current Chat</button>
+    <div id="empty" class="empty">No snapshot yet.<br>Click Save above while on Claude.ai</div>
+    <div id="code-card" class="card" style="display:none">
+        <div class="lbl">Relay Code</div>
+        <div class="code" id="code">—</div>
+        <div class="hint">Enter this on another browser to sync</div>
+    </div>
+    <div id="snap-card" class="card" style="display:none">
+        <div class="info" id="info"></div>
+        <div class="prev" id="prev"></div>
+    </div>
+    <div class="card">
+        <div class="lbl">Load from another browser</div>
+        <input id="code-in" placeholder="Enter relay code  e.g. CR-4829" maxlength="7">
+        <button class="load" id="load">Load context →</button>
+        <button class="clear" id="clr">Clear saved snapshot</button>
+    </div>
+    <div class="tip">Context appears in Claude's sidebar automatically<br>Switch account → look for "▶ Continue chat"
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
