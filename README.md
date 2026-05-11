@@ -5,11 +5,10 @@ Seamless Claude account handoff. When you hit the free usage limit, ClaudeRelay 
 ## ✨ Features
 
 - ✅ Auto-saves when Claude usage limit is detected
-- ✅ One-click save from extension popup (no DevTools needed)
+- ✅ One-click save from extension popup 
 - ✅ Cross-browser sync via Cloudflare KV (free)
 - ✅ Works on Chrome, Edge, and Brave (any browser)
 - ✅ 100% free for users — open source
-
 
 ### Developer / Manual Installation
 1. Clone or download the project files.
