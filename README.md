@@ -1,13 +1,8 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/version-1.0.0-f5a623?style=for-the-badge&logo=github" alt="Version 1.0.0"/>
-<img src="https://img.shields.io/badge/license-Proprietary-e85d04?style=for-the-badge" alt="Proprietary"/>
-<img src="https://img.shields.io/badge/browsers-Chrome%20%7C%20Edge%20%7C%20Brave-4285F4?style=for-the-badge&logo=googlechrome" alt="Browsers"/>
-<img src="https://img.shields.io/badge/cost-100%25%20Free-39d98a?style=for-the-badge" alt="Free"/>
-
 <br/><br/>
 
-# 🔁 ClaudeRelay
+# ClaudeRelay
 
 **Hit the Claude usage limit? Don't lose your conversation.**
 
