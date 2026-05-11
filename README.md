@@ -1,4 +1,4 @@
-# 🔁 ClaudeRelay (v1.0.0 - 1st Version)
+# 🔁 ClaudeRelay (v1.0.0)
 
 Seamless Claude account handoff. When you hit the free usage limit, ClaudeRelay saves your conversation so you can continue it instantly on another account — one click, no lost context.
 
