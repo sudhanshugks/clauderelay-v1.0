@@ -54,7 +54,7 @@ ClaudeSync shows your context in a **sidebar panel beside the chat**. You read i
 
 ## 5 Important Highlights
 
-1. **The extension only runs on `claude.ai`.
+1. The extension only runs on `claude.ai`.
 2. **Smart Context Packing:** It intelligently packs your conversation by sending the last 15+ messages to ensure Claude retains the most relevant recent context while saving space.
 3. **Cross-Browser Sync (Cloudflare Worker):** Includes support for syncing over a Cloudflare worker backend, letting you safely pass a short Relay Code to another device or browser.
 4. **Robust Local Fallback:** Even if cloud sync fails or is unavailable, the extension saves the conversation snapshot locally (using `chrome.storage.local`), allowing you to switch accounts on the same browser effortlessly.
