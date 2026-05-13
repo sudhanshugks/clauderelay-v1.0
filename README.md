@@ -34,7 +34,7 @@ ClaudeSync shows your context in a **sidebar panel beside the chat**. You read i
 
 
 ## Installation
-### Option A — Chrome Web Store *(coming soon)*
+### Option A — Edge Web Store *(coming soon)*
 
 ### Option B — Manual install (Developer Mode)
 1. [Download the latest release](../../releases/latest) and unzip it
