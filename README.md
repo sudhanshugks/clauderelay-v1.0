@@ -44,7 +44,6 @@ ClaudeSync shows your context in a **sidebar panel beside the chat**. You read i
 5. The ClaudeSync icon appears in your toolbar
 
 ## How It Works
-
 1. Use Claude normally.
 2. When you hit the limit, ClaudeRelay auto-saves your chat (or click 💾 in the extension popup anytime).
 3. Switch to another Claude account in any browser (same browser or new browser).
